@@ -1,24 +1,120 @@
 .page {
-  background-color: #ddd;
-  color: #333;
+  background-image: url(../img/olas.gif);
+  background-size: cover;
+  color: black;
   min-height: 100vh;
 }
+
 .absoluteCenter {
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.withNavBar{
+
+.withNavBar {
   min-height: calc(100vh - 4.1rem);
 }
+
 .content {
-  background-color:#fff;
-  padding:1rem;
+  background: linear-gradient(#08546c, #022534);
   min-height: 100vh;
+  border-color: black;
+
 }
+
 .withNavBar .content {
-  margin-top:0.1rem;
+  margin-top: 0.1rem;
   min-height: calc(100vh - 4.2rem);
+}
+
+.refresh {
+  color: black;
+  font-size: x-large;
+}
+
+.labelText {
+  font-size: xx-large;
+  color: whitesmoke;
+}
+
+.table {
+  background-color: #0cb7f2;
+  color: #004173;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 2px 0;
+  font-size: 25px;
+  box-shadow: 0 0 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: block;
+  border-width: 2px;
+  border-color: black;
+  margin-top: 25px;
+}
+
+.table1 {
+  background-color: #0cb7f2;
+  color: #004173;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 2px 0;
+  font-size: 25px;
+  box-shadow: 0 0 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: block;
+  border-width: 2px;
+  border-color: black;
+  
+}
+
+
+.table thead tr {
+  text-align: middle;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid black;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+.titulos {
+  color: #b6ffff;
+  
+}
+
+th,
+td {
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.id {
+  width: 40%;
+}
+
+.pais {
+  width: 25%;
+}
+
+.fecha {
+  width: 25%;
+}
+
+.estado {
+  width: 25%;
 }

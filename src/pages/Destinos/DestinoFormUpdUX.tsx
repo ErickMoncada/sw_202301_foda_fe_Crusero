@@ -12,7 +12,7 @@ interface IDestinosFormUXProps {
   onSelectChangeHandler: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   onClickHandler: () => void;
 }
-export const DestinoFormUX: FC<IDestinosFormUXProps> = ({
+export const DestinoFormUpdUX: FC<IDestinosFormUXProps> = ({
   _id,
   pais,
   status,
@@ -62,7 +62,7 @@ export const DestinoFormUX: FC<IDestinosFormUXProps> = ({
         <br /><br />
         <PrimaryButton
           onClick={onClickHandler}
-        >Crear Destino
+        >Actualizar Destino
         </PrimaryButton>
       </div>
     </Page>

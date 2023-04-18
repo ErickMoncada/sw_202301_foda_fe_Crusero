@@ -33,8 +33,25 @@ export const desApi = createApi({
           body: des
         }),
       invalidatesTags: ["Destinos"]
+    }),
+    upd: builder.mutation({
+      query: (des:{_id:string, pais:string, status:string,fechaComienzo:string}) => (
+        {
+          url: `upd/${des._id}`,
+          method: 'PUT',
+          body: des
+        }),
+      invalidatesTags: ["Destinos"]
+    }),
+    delete: builder.mutation({
+      query: (des:{_id:string}) => (
+        {
+          url: `del/${des._id}`,
+          method: 'DELETE',
+        }),
+      invalidatesTags: ["Destinos"]
     })
   })
 });
 
-export const {useGetAllQuery, useGetByIdQuery, useAddNewMutation} = desApi;
+export const {useGetAllQuery, useGetByIdQuery, useAddNewMutation, useUpdMutation, useDeleteMutation} = desApi;

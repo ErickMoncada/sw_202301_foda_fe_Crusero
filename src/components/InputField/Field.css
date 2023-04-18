@@ -5,20 +5,20 @@
   flex-direction:column;
 }
 .input input {
-  padding:0.5rem;
-  font-size: 1rem;
+  padding:1rem;
+  font-size: 1.5rem;
   background-color: transparent;
   border:none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #fbf9f9;
   outline-style: none;
 }
 .input input:focus {
   border-bottom: 1px solid #000;
 }
 .input label{
-  font-size: 0.8rem;
-  color: #777;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #fbf7f7;
+  margin-bottom: 1rem;
 }
 .input select{
   padding:0.5rem;

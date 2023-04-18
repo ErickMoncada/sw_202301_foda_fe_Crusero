@@ -44,7 +44,7 @@ const Menu:FC<MenuProps> = ({setShowMenu, selectShowMenu, showMenu}) => {
             </a>
           </li>
           <li>
-            <a href="/signup" onClick={onClickHandler}>
+            <a href="/newuser" onClick={(e)=>{}}>
               <BiUserPlus/>&nbsp;Crear Cuenta
             </a>
           </li>

@@ -1,0 +1,6 @@
+.home{
+    background-image: url(../components/img/oceano.jpg);
+    background-size: cover;
+    min-height: 93vh;
+    margin-top: -5px;
+}

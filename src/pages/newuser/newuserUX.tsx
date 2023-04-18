@@ -11,7 +11,7 @@ interface LoginUXProps {
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClickHandler: () => void;
 }
-export const LoginUX: FC<LoginUXProps> = ({
+export const NewUserUX: FC<LoginUXProps> = ({
   email,
   password,
   passwordError,
@@ -19,7 +19,7 @@ export const LoginUX: FC<LoginUXProps> = ({
   onClickHandler
 }) => {
   return (
-    <Page useAbsoluteCenter={true} pageTitle="Login">
+    <Page useAbsoluteCenter={true} pageTitle="newuser">
       <div className="login-ux">
         <Field
           name="email"
@@ -41,12 +41,11 @@ export const LoginUX: FC<LoginUXProps> = ({
           value={password}
         />
         {passwordError && <ErrorField>{passwordError}</ErrorField>}
-        
-        <br /><br />
 
+        <br /><br />
         <PrimaryButton
           onClick={onClickHandler}
-        >Iniciar Sesión
+        >Crear Usuario
         </PrimaryButton>
       </div>
     </Page>
