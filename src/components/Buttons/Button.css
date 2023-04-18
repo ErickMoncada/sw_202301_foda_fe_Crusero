@@ -10,7 +10,9 @@ button {
   background-color: #0979b0;
   color:#fff;
 }
-
+.botonactualizar{
+  margin: 25px;
+}
 .circleButton{
   display:flex;
   justify-content:center;

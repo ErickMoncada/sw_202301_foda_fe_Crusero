@@ -1,8 +1,9 @@
 import Page from "@/components/Page";
 import { DestinosUX } from "./DestinosUX";
 import { DestinoFormUX } from "./DestinoFormUX";
+import { DestinoFormUpdUX } from "./DestinoFormUpdUX";
 import { FC, useState } from "react";
-import { useGetAllQuery, useAddNewMutation, useGetByIdQuery } from "@/store/services/desServices";
+import { useGetAllQuery, useAddNewMutation, useGetByIdQuery,useUpdMutation,useDeleteMutation } from "@/store/services/desServices";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const Destinos: FC = () => {
@@ -20,6 +21,9 @@ export const Destinos: FC = () => {
         }}
         onAddClick={(): void => {
           navigate(`/destinos/new`);
+        }}
+        onUpdClick={(): void => {
+          navigate(`/destinos/upd`);
         }}
       />
     </Page>
@@ -72,6 +76,61 @@ export const DestinoForm: FC = () => {
     navigate("/destinos");
   }
   return <DestinoFormUX
+    _id={_id}
+    pais={pais}
+    status={status}
+    fecha={fechaComienzo}
+    onChangeHandler={onChangeHandler}
+    onSelectChangeHandler={onSelectChangeHandler}
+    onClickHandler={onClickHandler}
+  />;
+};
+export const DestinoUpdForm: FC = () => {
+  const navigate = useNavigate();
+  const [_id, setCodigo] = useState("");
+  const [pais, setPais] = useState("");
+  const [status, setStatus] = useState("");
+  const [fechaComienzo, setFecha] = useState("");
+  const [UpdDestino] = useUpdMutation();
+  const onChangeHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    const { name, value } = event.target;
+    switch (name) {
+      case "_id":
+        setCodigo(value);
+        break;
+      case "pais":
+        setPais(value);
+        break;
+        case "fecha":
+        setFecha(value);
+        break;
+      default:
+        break;
+    }
+  };
+  const onSelectChangeHandler = (
+    event: React.SelectChangeEvent<HTMLSelectElement>
+  ): void => {
+    const { name, value } = event.target;
+    switch (name) {
+      case "status":
+        setStatus(value);
+        break;
+      default:
+        break;
+    }
+  };
+  const onClickHandler = async ()=>{
+    const result = await UpdDestino({
+      _id, pais, status,
+      fechaComienzo
+    }).unwrap();
+    console.log(result);
+    navigate("/destinos");
+  }
+  return <DestinoFormUpdUX
     _id={_id}
     pais={pais}
     status={status}

@@ -17,6 +17,7 @@ export interface IDestinosUXProps {
   error: string;
   onViewDestinoClick: (id: string) => void;
   onAddClick: () => void;
+  onUpdClick: () => void;
 }
 
 export const DestinosUX: FC<IDestinosUXProps> = ({
@@ -25,6 +26,7 @@ export const DestinosUX: FC<IDestinosUXProps> = ({
   error,
   onViewDestinoClick,
   onAddClick,
+  onUpdClick
 }) => {
   return (
     <>
@@ -34,6 +36,10 @@ export const DestinosUX: FC<IDestinosUXProps> = ({
       <PrimaryButton
         onClick={onAddClick}
       >Añadir
+      </PrimaryButton>
+      <PrimaryButton className="botonactualizar"
+        onClick={onUpdClick}
+      >Actualizar
       </PrimaryButton>
 
       <TitulosUX
