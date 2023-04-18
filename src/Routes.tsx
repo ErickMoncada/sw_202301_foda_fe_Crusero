@@ -17,7 +17,8 @@ const Routes = ()=>{
   return (
     <Router>
       <Switch>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Login/>} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/newuser" element={<NewUser/>} />
         <Route path="/version" element={<Version />} />

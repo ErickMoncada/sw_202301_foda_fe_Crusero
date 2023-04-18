@@ -29,7 +29,7 @@ const Login = () => {
       const data = await login({email, password}).unwrap();
       const { _id } = decode(data.token) as {_id:string};
       dispatch(setSec({email, name: '', token: data.token, _id}));
-      navigate('/');
+      navigate('/home');
     }
   }
   return (

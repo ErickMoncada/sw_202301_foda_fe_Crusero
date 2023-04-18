@@ -31,9 +31,11 @@ export const Home: FC = () => {
 
 <center>
   {data && !isLoading && !error && (
+    <a href="/destinos" onClick={(e)=>{}}>
     <Card>
       <h2>{data}</h2>
     </Card>
+    </a>
   )}
 </center>
 
