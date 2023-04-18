@@ -68,7 +68,7 @@ export const NewUserUX: FC<LoginUXProps> = ({
         <br /><br />
         <PrimaryButton
           onClick={onClickHandler}
-        >Crear Usuario
+        >Cambiar Contraseña
         </PrimaryButton>
       </div>
     </Page>

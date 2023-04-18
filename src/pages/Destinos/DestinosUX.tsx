@@ -18,6 +18,8 @@ export interface IDestinosUXProps {
   onViewDestinoClick: (id: string) => void;
   onAddClick: () => void;
   onUpdClick: () => void;
+  onDelClick: () => void;
+  onHomeClick: () => void;
 }
 
 export const DestinosUX: FC<IDestinosUXProps> = ({
@@ -26,21 +28,31 @@ export const DestinosUX: FC<IDestinosUXProps> = ({
   error,
   onViewDestinoClick,
   onAddClick,
-  onUpdClick
+  onUpdClick,
+  onDelClick,
+  onHomeClick
 }) => {
   return (
     <>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-
-      <PrimaryButton
+      <PrimaryButton 
+        onClick={onHomeClick}
+      >Home
+      </PrimaryButton>
+      <PrimaryButton className="botonactualizar"
         onClick={onAddClick}
       >Añadir
       </PrimaryButton>
-      <PrimaryButton className="botonactualizar"
+      <PrimaryButton 
         onClick={onUpdClick}
       >Actualizar
       </PrimaryButton>
+      <PrimaryButton className="botonactualizar"
+        onClick={onDelClick}
+      >Eliminar
+      </PrimaryButton>
+
 
       <TitulosUX
 

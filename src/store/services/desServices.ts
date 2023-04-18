@@ -46,9 +46,8 @@ export const desApi = createApi({
     delete: builder.mutation({
       query: (des:{_id:string}) => (
         {
-          url: 'del/:id',
+          url: `del/${des._id}`,
           method: 'DELETE',
-          params: des
         }),
       invalidatesTags: ["Destinos"]
     })
