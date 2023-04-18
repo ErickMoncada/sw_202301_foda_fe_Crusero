@@ -25,8 +25,16 @@ export const secApi = createApi({
         body: body
       }),
       invalidatesTags: ["Users"]
+    }),
+    password: builder.mutation({
+      query: (res:{id:string,email:string,password:string,newpassword:string}) => ({
+        url: `upd/${res.id}/password`,
+        method: 'PUT',
+        body: res
+      }),
+      invalidatesTags: ["Users"]
     })
   })
 });
 
-export const {useCreateuserMutation,useLoginMutation} = secApi;
+export const {useCreateuserMutation,useLoginMutation,usePasswordMutation} = secApi;

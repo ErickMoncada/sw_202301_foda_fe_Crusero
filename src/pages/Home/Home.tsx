@@ -37,6 +37,11 @@ export const Home: FC = () => {
     </Card>
     </a>
   )}
+  <a href="/updpassword" onClick={(e)=>{}}>
+    <Card>
+      <h2>Cambio Contraseña</h2>
+    </Card>
+    </a>
 </center>
 
   {isLoading && <p>Loading...</p>}

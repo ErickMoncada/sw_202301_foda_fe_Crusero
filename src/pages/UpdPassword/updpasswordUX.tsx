@@ -5,6 +5,7 @@ import { Field } from "../../components/InputField";
 import { PrimaryButton } from "../../components/Buttons";
 import ErrorField from "../../components/ErrorField";
 interface LoginUXProps {
+  id:string;
   email: string;
   password: string;
   newpassword:string;
@@ -13,6 +14,7 @@ interface LoginUXProps {
   onClickHandler: () => void;
 }
 export const NewUserUX: FC<LoginUXProps> = ({
+  id,
   email,
   password,
   newpassword,
@@ -21,8 +23,17 @@ export const NewUserUX: FC<LoginUXProps> = ({
   onClickHandler
 }) => {
   return (
-    <Page useAbsoluteCenter={true} pageTitle="newuser">
+    <Page useAbsoluteCenter={true} pageTitle="UpdPassword">
       <div className="login-ux">
+      <Field
+          name="id"
+          id="id"
+          type="id"
+          labelText="id"
+          placeholder="id"
+          onChange={onChangeHandler}
+          value={id}
+        />
         <Field
           name="email"
           id="email"
