@@ -30,6 +30,7 @@ export const LoginUX: FC<LoginUXProps> = ({
           onChange={onChangeHandler}
           value={email}
         />
+        <br /><br />
         <Field
           name="password"
           id="password"
@@ -40,6 +41,9 @@ export const LoginUX: FC<LoginUXProps> = ({
           value={password}
         />
         {passwordError && <ErrorField>{passwordError}</ErrorField>}
+        
+        <br /><br />
+
         <PrimaryButton
           onClick={onClickHandler}
         >Iniciar Sesión

@@ -59,7 +59,7 @@ export const DestinoFormUX: FC<IDestinosFormUXProps> = ({
           onChange={onSelectChangeHandler}
           value={status}
         />
-
+        <br /><br />
         <PrimaryButton
           onClick={onClickHandler}
         >Crear Destino

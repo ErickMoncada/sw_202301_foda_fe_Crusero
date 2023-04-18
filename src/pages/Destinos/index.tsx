@@ -31,7 +31,7 @@ export const DestinoForm: FC = () => {
   const [_id, setCodigo] = useState("");
   const [pais, setPais] = useState("");
   const [status, setStatus] = useState("");
-  const [fecha, setFecha] = useState("");
+  const [fechaComienzo, setFecha] = useState("");
   const [newDestino] = useAddNewMutation();
   const onChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -66,7 +66,7 @@ export const DestinoForm: FC = () => {
   const onClickHandler = async ()=>{
     const result = await newDestino({
       _id, pais, status,
-      fechaComienzo: ""
+      fechaComienzo
     }).unwrap();
     console.log(result);
     navigate("/destinos");
@@ -75,7 +75,7 @@ export const DestinoForm: FC = () => {
     _id={_id}
     pais={pais}
     status={status}
-    fecha={fecha}
+    fecha={fechaComienzo}
     onChangeHandler={onChangeHandler}
     onSelectChangeHandler={onSelectChangeHandler}
     onClickHandler={onClickHandler}

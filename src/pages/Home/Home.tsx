@@ -2,6 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { Card } from "../../components/Card";
 import { getHomeData } from "./HomeService";
 import Page from "../../components/Page";
+import '../../components/home.css';
 export const Home: FC = () => {
   const [data, setData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -23,21 +24,31 @@ export const Home: FC = () => {
   }, [refresh]);
   return (
     <Page>
-      <h1>Home Page</h1>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      <a
-        onClick={() => {
-          setRefresh(!refresh);
-        }}
-      >
-        Refresh
-      </a>
-      {data && !isLoading && !error && (
-        <Card>
-          <h2>{data}</h2>
-        </Card>
-      )}
+      <div className="home">
+        <br />
+      <h1>Cruceros</h1>
+
+
+<center>
+  {data && !isLoading && !error && (
+    <Card>
+      <h2>{data}</h2>
+    </Card>
+  )}
+</center>
+
+  {isLoading && <p>Loading...</p>}
+  {error && <p>{error}</p>}
+  
+  <a className="refresh"
+    onClick={() => {
+      setRefresh(!refresh);
+    }}
+  >
+    Refresh
+  </a>
+      </div>
+
     </Page>
   );
 };
